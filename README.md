@@ -16,21 +16,45 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Features Implemented
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dynamic Routing
+Lessons are accessed via dynamic route: /lesson/[lessonId].
 
-## Learn More
+Content Rendering
 
-To learn more about Next.js, take a look at the following resources:
+TEXT: Markdown rendering using react-markdown.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+IMAGE: Rendered with standard <img> tag using Tailwind CSS styling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+PDF: Embedded using Google Docs Viewer via an <iframe>.
 
-## Deploy on Vercel
+VIDEO: Embedded YouTube player with auto-complete tracking on video end.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Lesson Completion Tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Video lessons: automatically marked as complete when video ends.
+
+Other lesson types: manually marked using "Mark as Completed" button.
+
+State Management
+
+Uses global AppContext to track completed lessons across the app.
+
+Responsive UI
+
+Built with Tailwind CSS.
+
+Supports dark mode and mobile responsiveness.
+
+## Assumptions Made
+
+The lessons data is static and hardcoded; in a real-world scenario, this would come from an API or CMS.
+
+PDF files are rendered using Google Docs Viewer, requiring an internet connection.
+
+Only YouTube links are supported for video lessons.
+
+No authentication system is implemented; user identity and lesson tracking are local.
+
+All lessons strictly fall under one of the four content types: TEXT, IMAGE, PDF, or VIDEO.
